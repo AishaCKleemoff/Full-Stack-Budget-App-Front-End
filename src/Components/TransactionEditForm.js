@@ -20,9 +20,9 @@ function TransactionEditForm() {
     setTransaction({ ...transaction, [event.target.id]: event.target.value });
   };
 
-  const handleCheckboxChange = () => {
-    setTransaction({ ...transaction, from: !transaction.from });
-  };
+  // const handleCheckboxChange = () => {
+  //   setTransaction({ ...transaction, from: !transaction.from });
+  // };
  
   useEffect(() => {
     axios.get(`${API}/transactions/${index}`)
@@ -61,12 +61,11 @@ function TransactionEditForm() {
         />
         <label htmlFor="amount">Amount:</label>
         <input
-          id="url"
+          id="amount"
           type="text"
-          pattern="http[s]*://.+"
           required
-          value={transaction.url}
-          placeholder="http://"
+          value={transaction.amount}
+          placeholder=""
           onChange={handleTextChange}
         />
         <label htmlFor="category">Category:</label>

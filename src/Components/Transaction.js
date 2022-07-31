@@ -4,20 +4,13 @@ function Transaction({ transaction, index }) {
   return (
     <tr>
       <td>
-        {transaction.amount ? (
-          <span>💰</span>
-        ) : (
-          <span>&nbsp; &nbsp; &nbsp;</span>
-        )}
+        <span>💲</span>
+        {transaction.amount}
       </td>
       <td>
-        {/* <a href={}target="_blank" rel="noreferrer"> */}
-        {transaction.item_name}
-        {/* </a> */}
+        <Link to={`/transactions/${index}`}>{transaction.item_name}</Link>
       </td>
-      <td>
-        <Link to={`/transactions/${index}`}>✏️</Link>
-      </td>
+      <td>📅 {transaction.date}</td>
     </tr>
   );
 }

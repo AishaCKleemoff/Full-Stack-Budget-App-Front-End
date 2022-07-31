@@ -29,7 +29,7 @@ function TransactionEditForm() {
       .then(response => setTransaction(response.data))
       .catch(error => console.error(error))
    
-  }, []);
+  }, [index]);
 
   const updateTransaction = () => {
     axios.put(`${API}/transactions/${index}`, transaction) 

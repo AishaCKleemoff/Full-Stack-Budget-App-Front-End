@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const API = process.env.REACT_APP_API_URL
+const API = process.env.REACT_APP_API_URL;
 
 function TransactionNewForm() {
   const [transaction, setTransaction] = useState({
@@ -15,11 +15,12 @@ function TransactionNewForm() {
   const navigate = useNavigate();
 
   const addTransaction = () => {
-    axios.post(`${API}/transactions`, transaction)
-      .then(response => navigate(`/transactions`)) 
-      .catch(error => console.error(error)) 
+    axios
+      .post(`${API}/transactions`, transaction)
+      .then((response) => navigate(`/transactions`))
+      .catch((error) => console.error(error));
   };
-  
+
   const handleTextChange = (event) => {
     setTransaction({ ...transaction, [event.target.id]: event.target.value });
   };
@@ -37,8 +38,8 @@ function TransactionNewForm() {
       <form onSubmit={handleSubmit} className="new-form">
         <label htmlFor="name"> Transaction Name:</label>
         <input
+          name="name"
           id="name"
-          value={transaction.item_name}
           type="text"
           onChange={handleTextChange}
           placeholder="Name of Transaction"
@@ -48,9 +49,7 @@ function TransactionNewForm() {
         <input
           id="amount"
           type="text"
-          pattern="http[s]*://.+"
           required
-          value={transaction.amount}
           placeholder="$$$"
           onChange={handleTextChange}
         />
@@ -59,7 +58,6 @@ function TransactionNewForm() {
           id="category"
           type="text"
           name="category"
-          value={transaction.category}
           placeholder="debit or credit "
           onChange={handleTextChange}
         />
@@ -75,7 +73,6 @@ function TransactionNewForm() {
         <textarea
           id="date"
           name="date"
-          value={transaction.date}
           onChange={handleTextChange}
           placeholder="Date of transaction."
         />

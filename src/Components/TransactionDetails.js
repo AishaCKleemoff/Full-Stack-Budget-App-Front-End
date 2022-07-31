@@ -20,7 +20,7 @@ function TransactionDetails() {
       
     },
     
-    [index]
+    [index, navigate]
   );
   
 
@@ -34,7 +34,7 @@ function TransactionDetails() {
   return (
     <article>
       <h3>
-        {transaction.isFavorite ? <span>💰</span> : null} {transaction.item_name}
+        {transaction.from ? <span>💰</span> : null} {transaction.item_name}
       </h3>
       <h5>
         <span>

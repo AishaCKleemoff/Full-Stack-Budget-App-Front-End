@@ -14,17 +14,27 @@ function Transactions() {
       .catch((error) => { console.error(error) })
   },[])
   
+  const allTransArray = transactions.map((transaction) => {
+    return Number(transaction.amount);
+  });
+  const totalAmount = allTransArray.reduce((prevAmount, currentAmount) => {
+    return Number(prevAmount + currentAmount);
+  },
+    0
+  );
   
 
   return (
+    <>
+       <h2>Total: ${totalAmount}</h2>
     <div className="Transactions">
       <section>
         <table>
           <thead className="transactions-thead">
             <tr>
-              <th>Date</th>
-              <th>Transaction</th>
               <th>Amount</th>
+              <th>Transaction</th>
+              <th>Date</th>
             </tr>
           </thead>
           <tbody>
@@ -35,6 +45,7 @@ function Transactions() {
         </table>
       </section>
     </div>
+    </>
   );
 }
 

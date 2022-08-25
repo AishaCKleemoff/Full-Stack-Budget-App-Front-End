@@ -85,6 +85,7 @@ function TransactionEditForm() {
         <textarea
           id="date"
           name="date"
+          type="text"
           value={transaction.date}
           onChange={handleTextChange}
           placeholder="Please enter date"

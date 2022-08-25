@@ -12,7 +12,7 @@ function TransactionEditForm() {
     item_name: "",
     date: "",
     category: "",
-    amount:0,
+    amount:"",
     from: "",
   });
 
@@ -20,10 +20,7 @@ function TransactionEditForm() {
     setTransaction({ ...transaction, [event.target.id]: event.target.value });
   };
 
-  // const handleCheckboxChange = () => {
-  //   setTransaction({ ...transaction, from: !transaction.from });
-  // };
- 
+  
   useEffect(() => {
     axios.get(`${API}/transactions/${index}`)
       .then(response => setTransaction(response.data))

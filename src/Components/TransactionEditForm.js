@@ -56,12 +56,12 @@ function TransactionEditForm() {
           placeholder=""
           required
         />
-        <label htmlFor="amount">Amount:</label>
+        <label htmlFor="date">Date:</label>
         <input
-          id="amount"
+          id="date"
           type="text"
           required
-          value={transaction.amount}
+          value={transaction.date}
           placeholder=""
           onChange={handleTextChange}
         />
@@ -74,21 +74,20 @@ function TransactionEditForm() {
           placeholder="educational, inspirational, ..."
           onChange={handleTextChange}
         />
-        <label htmlFor="from">From:</label>
+        <label htmlFor="amount">Amount:</label>
         <input
-          id="from"
+          id="amount"
           type="text"
           onChange={handleTextChange}
-          checked={transaction.from}
+          checked={transaction.amount}
         />
-        <label htmlFor="date">Date:</label>
+        <label htmlFor="from">From:</label>
         <textarea
-          id="date"
-          name="date"
+          id="from"
+          name="from"
           type="text"
-          value={transaction.date}
+          value={transaction.from}
           onChange={handleTextChange}
-          placeholder="Please enter date"
         />
         <br />
 

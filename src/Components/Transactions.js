@@ -38,8 +38,8 @@ function Transactions() {
             </tr>
           </thead>
           <tbody>
-            {transactions.map((transaction, index) => {
-                return <Transaction key={index} transaction={transaction} index={index} />;
+            {transactions.map((transaction, arrayIndex) => {
+                return <Transaction key={index} transaction={transaction} index={arrayIndex} />;
             })}
           </tbody>
         </table>

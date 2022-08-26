@@ -64,14 +64,16 @@ function TransactionNewForm() {
         <label htmlFor="from">From:</label>
         <input
           id="from"
+          name="from"
           type="text"
           placeholder="source of transaction "
           onChange={handleCheckboxChange}
           checked={transaction.from}
         />
         <label htmlFor="date">Date:</label>
-        <textarea
+        <input
           id="date"
+          type="date"
           name="date"
           onChange={handleTextChange}
           placeholder="Date of transaction."

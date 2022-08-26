@@ -8,7 +8,7 @@ function Transaction({ transaction, index }) {
         {transaction.amount}
       </td>
       <td>
-        <Link to={`/transactions/${index}`}>{transaction.item_name}</Link>
+        <Link to={`/transactions/${arrayIndex}`}>{transaction.item_name}</Link>
       </td>
       <td>📅 {transaction.date}</td>
     </tr>
